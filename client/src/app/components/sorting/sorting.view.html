@@ -1,0 +1,8 @@
+<div ng-controller="SortingController" class="sorting-btn col-lg-offset-4 col-lg-4">
+    <div ng-repeat="address in addresses">
+        <div class="sorting-btn">
+            <select ng-model="address.state" ng-options="state.lookupCode as state.description for state in lov_state"></select>
+        </div>
+        <div class="sorting-wrapper">{{address.state}}</div>
+    </div>
+</div>

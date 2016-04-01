@@ -1,0 +1,12 @@
+<div class="container wrapper">
+    <div>Main view</div>
+    <section id="main" >
+        <div class="col-lg-4 col-md-4 text-center" ng-repeat="item in main.items">
+           <img src="http://localhost:4001/api/v1/{{item.imgUrl}}" title="tel" class="tel-prew">
+            <div class="item-title">{{item.name}}</div>
+            <div class="price col-md-offset-10 col-md-2">${{item.price}}</div>
+            <div class="deck">Lorem ipsum</div>
+            <div class=" col-md-offset-10 col-md-2 btn-add">Add</div>
+        </div>
+    </section>
+</div>
