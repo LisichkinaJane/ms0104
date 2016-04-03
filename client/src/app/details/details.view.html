@@ -1,4 +1,19 @@
 <div class="container">
     <div>Details</div>
+    <div class="col-md-5">
+        <div class="col-md-12">
+            <img ng-src="http://localhost:4001/api/v1/{{details.url}}" title="tel">
+        </div>
+        <div class="col-md-2" ng-repeat="item in details.item.images">
+             <img ng-src="http://localhost:4001/api/v1/{{item}}" title="tel" class="img-sm">
+        </div>
+    </div>
+    <div class="col-md-7">
+         <div class="item-title">{{details.item.name}}</div>
+         <div class="col-md-12">
+            <div class="description">{{details.item.description[0]}}</div>
+        </div>
+    </div>
+    
 </div>
 
