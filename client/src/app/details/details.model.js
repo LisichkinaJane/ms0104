@@ -6,8 +6,10 @@
     .service('detailModel', DetailModel);
 
 function DetailModel($http, $q) {    
-    console.log('Service ModelDet');
+    console.log('ModelDetail');
+    
     this.getDetails = function(id){
+        
         return $http({
             method: 'GET',
             url:'http://localhost:4001/api/v1/phones/'+id

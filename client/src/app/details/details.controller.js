@@ -8,10 +8,14 @@
   /** @ngInject */
   function DetailsController($http, $scope, detailModel, $stateParams) {
     console.log("Details ctrl init");
-       var dt = this;
+        var dt = this;
+        dt.url = null;
+        dt.show = true;
+        dt.hide = true;
       
-    dt.item = {};
+      dt.item = {};
       debugger;
+      
     detailModel.getDetails($stateParams.id)
       .then(function (data) {
         dt.item = data;
@@ -21,5 +25,14 @@
         console.log(reject);
       });
       
+        dt.setImage = function(url) {
+      dt.url = url;
   }
+
+    dt.changeShow = function(){
+        dt.show = !dt.show;
+        dt.hide = !dt.hide;
+    };
+      
+      }
 })();
