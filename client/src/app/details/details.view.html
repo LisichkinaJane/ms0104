@@ -1,5 +1,4 @@
 <div class="container">
-    <div>Details</div>
     <div class="col-md-7">
         <div class="col-md-12">
             <img ng-src="http://localhost:4001/api/v1/{{details.url}}" title="tel">
@@ -27,32 +26,30 @@
    <div class="main-form-wrapper"  ng-hide="details.hide">
     <div class="detail-container">
         <div class="btn-close" ng-hide="details.hide" ng-click="details.changeShow()">
-          <span class="close_1"></span>
-          <span class="close_2"></span>
         </div>
-        <h3>Characteristics:</h3>
-        <div class="row">
+        <h3 class="text-center">Characteristics</h3>
+        <div class="col-md-6">
             <div class="col-md-4">
                 <h4>Feachers:</h4>
             </div>
-            <div class="col-md-6">{{details.item.additionalFeatures}}</div>
+            <div class="col-md-8">{{details.item.additionalFeatures}}</div>
         </div>
-        <div class="row">
+        <div class="col-md-6">
             <div class="col-md-4">
                 <h4>Android:</h4>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <ul>
                     <li>Version: {{details.item.android.os}}</li>
                     <li>ui: {{details.item.android.ui}}</li>
                 </ul>
             </div>
         </div>
-        <div class="row">
+        <div class="col-md-6">
             <div class="col-md-4">
                 <h4>Battery:</h4>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <ul>
                     <li>Standby time: {{details.item.battery.standbyTime}}</li>
                     <li>Talk time: {{details.item.battery.talkTime}}</li>
@@ -60,11 +57,11 @@
                 </ul>
             </div>
         </div>
-        <div class="row">
+        <div class="col-md-6">
             <div class="col-md-4">
                 <h4>Camera:</h4>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <ul>
                     <li>
                         <div>Features:</div>
@@ -76,11 +73,11 @@
                 </ul>
             </div>
         </div>
-        <div class="row">
+        <div class="col-md-6">
             <div class="col-md-4">
                 <h4>Connectivity:</h4>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <ul>
                     <li>Bluetooth: {{details.item.connectivity.bluetooth}}</li>
                     <li>Cell: {{details.item.connectivity.cell}}</li>
@@ -90,15 +87,77 @@
                 </ul>
             </div>
             </div>
-            <div class="row">
+            <div class="col-md-6">
                 <div class="col-md-4">
                     <h4>Display:</h4>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <ul>
                         <li>Screen Resolution: {{details.item.display.screenResolution}}</li>
                         <li>Screen Size: {{details.item.display.screenSize}}</li>
                         <li>Touch Screen: {{details.item.display.touchScreen}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="col-md-4">
+                    <h4>Hardare:</h4>
+                </div>
+                <div class="col-md-8">
+                    <ul>
+                        <li>Accelerometer: {{details.item.hardware.accelerometer}}</li>
+                        <li>Audiojack: {{details.item.hardware.audioJack}}</li>
+                        <li>CPU: {{details.item.hardware.cpu}}</li>
+                        <li>FM Radio: {{details.item.hardware.fmRadio}}</li>
+                        <li>Physical Keyboard: {{details.item.hardware.physicalKeyboard}}</li>
+                        <li>USB:{{details.item.hardware.usb}}</li>
+                    </ul>
+                </div>
+            </div>
+             <div class="col-md-6">
+                <div class="col-md-4">
+                    <h4>Name:</h4>
+                </div>
+                <div class="col-md-8">
+                    <ul>
+                        <li>{{details.item.name}}</li>
+                    </ul>
+                </div>
+            </div>
+                <div class="col-md-6">
+            <div class="col-md-4">
+                <h4>Size and weight:</h4>
+            </div>
+            <div class="col-md-8">
+                <ul>
+                    <li>
+                        <div>Dimensions:</div>
+                    </li>
+                    <li ng-repeat="item in details.item.sizeAndWeight.dimensions">{{item}}</li>
+                </ul>
+                <ul>
+                    <li>Weight: {{details.item.hardware.name}}</li>
+                </ul>
+            </div>
+        </div>
+           <div class="col-md-6">
+                <div class="col-md-4">
+                    <h4>Storage:</h4>
+                </div>
+                <div class="col-md-8">
+                    <ul>
+                        <li>Flash: {{details.item.storage.flash}}</li>
+                        <li>Ram: {{details.item.storage.ram}}</li>
+                    </ul>
+                </div>
+            </div>
+               <div class="col-md-6">
+                <div class="col-md-4">
+                    <h4>Availability:</h4>
+                </div>
+                <div class="col-md-8">
+                    <ul>
+                        <li>{{details.item.availability[0]}}</li>
                     </ul>
                 </div>
             </div>

@@ -14,7 +14,6 @@ function DetailModel($http, $q) {
             method: 'GET',
             url:'http://localhost:4001/api/v1/phones/'+id
         }).then(function(response){ 
-            debugger
             return response.data;
         },function (reject) {
           console.log(reject);

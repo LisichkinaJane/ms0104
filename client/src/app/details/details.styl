@@ -16,16 +16,17 @@ $icon-font-path = "../../../client/bower_components/bootstrap-stylus/fonts/"
     height 85px
  
 .detail-container
-    position: relative;
+    position: relative
     left 0
     right 0
     margin 0px auto
-    top 120px
-    height 700px
-    width 800px
-    background #f0efe8
+    top 50px
+    height 600px
+    width 950px
+    background #f8f8f4
     padding 2%
     border-radius 5%
+    overflow-y scroll
     
 .main-form-wrapper
     width 100%
@@ -37,30 +38,21 @@ $icon-font-path = "../../../client/bower_components/bootstrap-stylus/fonts/"
     margin 0px auto
     position fixed
     z-index 21
-    
-.close_1:after
-    content "/"
-    color red
-    font-size 28px
-    text-align center
-    
-.close_2:after
-    content "\"
-    color red
-    font-size 28px
-    text-align center
-    
-.close_1
-    transform: rotate(20deg);
-    position: absolute;
-    top: 30px;
-    right: 50px;
-    
-.close_2
-    transform: rotate(10deg);
-    position: absolute;
-    top: 30px;
-    right: 50px;
+
+.btn-close
+    position absolute
+    right 10px
+    top 10px
+    background url('../../assets/images/images_cl/Close.png')
+    width: 54px
+    height: 54px
+    cursor pointer
+
+.btn-close:hover
+    background url('../../assets/images/images_cl/Close1.png')
+    width: 54px
+    height: 54px
+  
     
 
 /**
