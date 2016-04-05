@@ -5,17 +5,103 @@
             <img ng-src="http://localhost:4001/api/v1/{{details.url}}" title="tel">
         </div>
         <div class="col-md-2" ng-repeat="item in details.item.images">
-             <img ng-src="http://localhost:4001/api/v1/{{item}}" title="tel" class="img-sm" ng-click="details.setImage(item)">
+            <img ng-src="http://localhost:4001/api/v1/{{item}}" title="tel" class="img-sm" ng-click="details.setImage(item)">
         </div>
     </div>
     <div class="col-md-5">
-         <div class="item-title">{{details.item.name}}</div>
-         <div class="col-md-12">
-           <h2>Description</h2>
-            <div class="description">{{details.item.description[0]}}</div>
+        <div class="item-title">
+            <h2>{{details.item.name}}</h2>
+        </div>
+        <div class="col-md-12">
+            <h3>Description:</h3>
+              <div class="description">{{details.item.description[0]}}</div>
+
             <div class=" col-md-offset-8 col-md-2 btn-add">Add</div>
         </div>
-    </div>
-    
+        <div class="col-md-12">
+            <button class="btn" ng-show="details.show" ng-click="details.changeShow()">Show more...
+            </button>
+        </div>
 </div>
-
+</div>
+   <div class="main-form-wrapper"  ng-hide="details.hide">
+    <div class="detail-container">
+        <div class="btn-close" ng-hide="details.hide" ng-click="details.changeShow()">
+          <span class="close_1"></span>
+          <span class="close_2"></span>
+        </div>
+        <h3>Characteristics:</h3>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Feachers:</h4>
+            </div>
+            <div class="col-md-6">{{details.item.additionalFeatures}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Android:</h4>
+            </div>
+            <div class="col-md-6">
+                <ul>
+                    <li>Version: {{details.item.android.os}}</li>
+                    <li>ui: {{details.item.android.ui}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Battery:</h4>
+            </div>
+            <div class="col-md-6">
+                <ul>
+                    <li>Standby time: {{details.item.battery.standbyTime}}</li>
+                    <li>Talk time: {{details.item.battery.talkTime}}</li>
+                    <li>Type: {{details.item.battery.type}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Camera:</h4>
+            </div>
+            <div class="col-md-6">
+                <ul>
+                    <li>
+                        <div>Features:</div>
+                    </li>
+                    <li ng-repeat="item in details.item.camera.features">{{item}}</li>
+                </ul>
+                <ul>
+                    <li>Primary: {{details.item.camera.primary}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Connectivity:</h4>
+            </div>
+            <div class="col-md-6">
+                <ul>
+                    <li>Bluetooth: {{details.item.connectivity.bluetooth}}</li>
+                    <li>Cell: {{details.item.connectivity.cell}}</li>
+                    <li>GPS: {{details.item.connectivity.gps}}</li>
+                    <li>Infrared: {{details.item.connectivity.infrared}}</li>
+                    <li>WiFi: {{details.item.connectivity.wifi}}</li>
+                </ul>
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>Display:</h4>
+                </div>
+                <div class="col-md-6">
+                    <ul>
+                        <li>Screen Resolution: {{details.item.display.screenResolution}}</li>
+                        <li>Screen Size: {{details.item.display.screenSize}}</li>
+                        <li>Touch Screen: {{details.item.display.touchScreen}}</li>
+                    </ul>
+                </div>
+            </div>
+       
+    </div>
+    </div>
