@@ -44,10 +44,8 @@ class CollectionCreator {
     const promises =[];
 
     items.forEach(item => {
-      item.averageRating = 4;
       const model = new PhoneModel(item);
-
-
+      
       promises.push(model.save())
     });
 

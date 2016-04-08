@@ -12,8 +12,8 @@
         dt.url = null;
         dt.show = true;
         dt.hide = true;
-      
-      dt.item = {};
+    
+    dt.item = {};
       
     detailModel.getDetails($stateParams.id)
       .then(function (data) {
@@ -32,6 +32,17 @@
         dt.show = !dt.show;
         dt.hide = !dt.hide;
     };
+      
+       dt.comments = [];
+      
+      detailModel.getComments($stateParams.id)
+      .then(function (data) {
+        dt.comments = data;
+    
+      }, function (reject) {
+        console.log(reject);
+      });
+      
       
       }
 })();

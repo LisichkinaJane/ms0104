@@ -1,7 +1,7 @@
 /**
  * @module phones model
  */
-const mongoose = require('./mongoose');
+const mongoose = require('mongoose');
 /**
  * created Schema object for mongoose
  */
@@ -24,12 +24,12 @@ const CommentSchema = new Schema({
         type: Number,
         required: true
     },
-    subcomment_ids: {
-        type: Array,
-        required: false
-    },
     item_rating: {
         type: Number,
+        required: false
+    },
+    subcomment_ids: {
+        type: Array,
         required: false
     }
 });
