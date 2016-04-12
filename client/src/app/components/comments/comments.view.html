@@ -1,14 +1,4 @@
 <div class="container">
-    <div class="row">
-        <div class="col-lg-6">
-            <h2>Reviews:</h2>
-        </div>
-        <div class="col-lg-2 col-lg-offset-4">
-            <a href="" ng-click="gotoAnchor(x)">
-            <div class="btn btn-comments">Add comments </div>
-            </a>
-        </div>
-    </div>
     <div class="comments-wrapper">
         <div class="row">
             <div class="col-lg-6 comment-author">
@@ -19,14 +9,4 @@
         <div class="comment-text">{{comment.text}}</div>
         <div class="comment-date text-right">{{comment.created_on | date}}</div>
     </div> 
-<form role="form" class="form-comments" id="anchor{{x}}">
-  <div class="form-group">
-    <label for="name">Name:</label>
-    <input type="text" class="form-control" id="author-name">
-  </div>
-  <div class="form-group">
-    <textarea></textarea>
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
 </div>

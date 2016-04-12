@@ -7,6 +7,7 @@
 
 function DetailModel($http, $q) {    
     console.log('ModelDetail');
+     this.comments = [{}];
     
     this.getDetails = function(id){
         
@@ -31,6 +32,18 @@ function DetailModel($http, $q) {
           console.log(reject);
         });
     
+    };
+    
+    this.setComments = function(item){
+        return $http({
+            method: 'POST',
+            url: 'http://localhost:4001/api/v1/comments/',
+            data: item
+        }).then(function(response){
+            return response.data;
+        },function(reject){
+            console.log(reject);
+        });
     };
 
 }

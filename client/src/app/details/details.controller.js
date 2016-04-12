@@ -12,8 +12,12 @@
         dt.url = null;
         dt.show = true;
         dt.hide = true;
+      
+         dt.newAuthorName = null;
+         dt.newCommentText = null;
     
-    dt.item = {};
+        dt.item = {};
+        dt.comments = [];
       
     detailModel.getDetails($stateParams.id)
       .then(function (data) {
@@ -33,8 +37,6 @@
         dt.hide = !dt.hide;
     };
       
-       dt.comments = [];
-      
       detailModel.getComments($stateParams.id)
       .then(function (data) {
         dt.comments = data;
@@ -42,7 +44,24 @@
       }, function (reject) {
         console.log(reject);
       });
-      
+     
+      dt.setComments = function (e){
+            var model = null; 
+          if(e.type ==='click' && dt.newAuthorName !=='' && dt.newCommentText !== ''){
+              model = {
+                  'item_id':$stateParams.id,
+                  'author': dt.newAuthorName,
+                  'item_rating':dt.rating,
+                  'text': dt.newCommentText 
+              };
+              
+        detailModel.setComments(model)
+            .then(function(response){
+            dt.coments.push(response);
+        });
+              
+          }
+      };
       
       }
 })();

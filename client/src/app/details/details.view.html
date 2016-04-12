@@ -164,4 +164,23 @@
        
     </div>
     </div>
+    <!--Comments-->
     <comments ng-repeat = "comment in details.comments" comment = "comment"></comments>
+     <!--Form comments-->   
+    <div class="container">
+        <form role="form" class="form-comments">
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" placeholder="Name:" class="form-control" id="author-name" ng-model ="details.newAuthorName">
+              </div>
+              <div class="form-group">
+                <label for="number">Rating:</label>
+                <input type="number" min="1" max="5" ng-model ="details.rating">
+              </div>
+              <div class="form-group">
+                <label for="someComment">Add Comment:</label>
+                <textarea placeholder="You comment" name="someComment" ng-model ="details.newCommentText"></textarea>
+              </div>
+              <button type="submit" class="btn btn-default btn-comments" ng-click="details.setComments($event)">Submit</button>
+        </form>
+    </div>

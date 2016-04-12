@@ -19,12 +19,6 @@
         templateUrl: 'app/details/details.view.html',
         controller: 'DetailsController',
         controllerAs: 'details'
-      })
-      .state('details2', {
-        url: '/details2',
-        templateUrl: 'app/details2/details2.view.html',
-        controller: 'DetailsController2',
-        controllerAs: 'details2'
       });
 
     $urlRouterProvider.otherwise('/');
